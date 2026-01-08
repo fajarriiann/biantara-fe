@@ -33,6 +33,9 @@ const api = {
     async upload(endpoint, formData) {
         const response = await fetch(`${API_BASE_URL}${endpoint}`, {
             method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+            },
             body: formData
         });
         if (!response.ok) {
